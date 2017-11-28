@@ -20,16 +20,18 @@ def main():
             for line in open(args.path)]
     res1 = [(float(e[0][1]), float(e[0][2])) for e in res1 if e]
     print len(res)
-    #print res1
+    print res1
     x, y = zip(*res)
     x1,y1 = zip(*res1)
     # #print x
     plt.figure()
     plt.plot(x, y,'g-', label="target")
     plt.plot(x1,y1,'r-', label="position")
+    plt.xlim((-1, 2))
+    plt.ylim((-2, 60))
     plt.legend()
     plt.show()
     
     
 if __name__ == '__main__':
-	main()
+    main()
